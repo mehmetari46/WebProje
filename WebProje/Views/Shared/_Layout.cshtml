@@ -5,31 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - WebProje</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/navbar.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/WebProje.styles.css" asp-append-version="true" />
+    <script src="https://kit.fontawesome.com/9777cc5a96.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">HAYVAN BARINAĞI</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        <nav class="sidebar">
+            <div>
+                <h2 style="color:cornflowerblue;">HAYVAN BARINAĞI</h2>
+                <br /><br />
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">ANASAYFA</a>
+                            <a class="fa fa-fw fa-home sidebarField" asp-area="" asp-controller="Animal" asp-action="Index"><span>Anasayfa</span></a>
                         </li>
+                        <br />
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">HAYVAN SAHİPLENME</a>
+                            <a class="fa-solid fa-dog sidebarField" asp-area="" asp-controller="Sahiplenme" asp-action="Index">Hayvan Sahiplenme</a>
                         </li>
+                        <br />
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">HAYVAN KABUL</a>
+                            <a class="fa-solid fa-cat sidebarField" asp-area="" asp-controller="Kabul" asp-action="Privacy">Hayvan Kabul</a>
                         </li>
+                        <br />
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">GİRİŞ</a>
+                            <a class="fa fa-fw fa-user sidebarField" asp-area="" asp-controller="Login" asp-action="Index">Giris</a>
                         </li>
                     </ul>
                 </div>
@@ -41,12 +44,6 @@
             @RenderBody()
         </main>
     </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - WebProje - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

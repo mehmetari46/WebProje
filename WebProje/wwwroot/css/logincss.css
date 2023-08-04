@@ -5,7 +5,12 @@ body {
     font-family: Lato, Arial;
     text-align: center;
     color: #eee;
+    background-position:center;
     background-color: #fff;
+    background-image: url('../images/barinak.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
 }
 
 h4 {
