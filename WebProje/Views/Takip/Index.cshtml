@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hayvan Sahiplenme Başvuru Takip</title>
+    <link rel="stylesheet" href="~/css/takip.css">
+</head>
+<body>
+    <main>
+        <section class="sorgulama">
+            <h2>Sahiplenme Numarası Sorgulama</h2>
+            <form>
+                <label for="sahiplenmeNo">Sahiplenme Numarası:</label>
+                <input type="text" id="sahiplenmeNo" name="sahiplenmeNo" required>
+                <button type="submit">Sorgula</button>
+            </form>
+        </section>
+
+        <section id="sonuc">
+            <table>
+                <h2>Sorgulama Sonuçları</h2>
+                <thead>
+                    <tr>
+                        <th>Sahiplenme Numarası</th>
+                        <th>Hayvan Adı</th>
+                        <th>Hayvan Türü</th>
+                        <th>Hayvan ID</th>
+                        <th>Sahiplenme Durumu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Sorgu sonuçları burada dinamik olarak eklenir -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

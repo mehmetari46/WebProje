@@ -10,6 +10,10 @@
     overflow-x: hidden;
     padding-top: 16px;
 }
+header {
+    color: #fff;
+    text-align: center;
+}
         /* Style links on mouse-over */
     .sidebar a:hover {
         color: #3498db; /* Change the link text color on hover */

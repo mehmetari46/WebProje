@@ -1,27 +1,41 @@
 ﻿<!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" href="~/css/logincss.css" />
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - WebProje</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/WebProje.styles.css" asp-append-version="true" />
-    </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hayvan Tanıtım Sayfası</title>
+    <link rel="stylesheet" href="~/css/anasayfa.css">
+</head>
 <body>
-    <div class="kutu" >
-        <ul style="display:flex; justify-content:space-around">
-            <li style="list-style:none"><img src="~/images/kedi.jpeg" alt="alt yazısı" title="title yazısı" width="300" height="200"></li<br />
-            <a href="#" class="baslik">Kedi</a>
-            <li style="list-style:none"><img src="~/images/kopek.jpeg" alt="alt yazısı" title="title yazısı" width="300" height="200"></li<br />
-            <a href="#" class="baslik">Köpek</a>
-            <li style="list-style:none"><img src="~/images/kus.jpg" alt="alt yazısı" title="title yazısı" width="300" height="200"></li<br />
-            <a href="#" class="baslik">Kuş</a>
-            <li style="list-style:none"><img src="~/images/hamster.jpeg" alt="alt yazısı" title="title yazısı" width="300" height="200"></li<br />
-            <a href="#" class="baslik">Hamster</a>
-        </ul>
-    </div>
-    </body>
+    <header>
+        <h1>Hayvan Tanıtım Sayfası</h1>
+    </header>
+    <main>
+        <section class="animal">
+            <a href="#kedi">
+                <img src="~/images/kedi.jpeg" alt="Kedi">
+                <h2>Kedi</h2>
+            </a>
+        </section>
+        <section class="animal">
+            <a href="#kopek">
+                <img src="~/images/kopek.jpeg" alt="Köpek">
+                <h2>Köpek</h2>
+            </a>
+        </section>
+        <section class="animal">
+            <a href="#kus">
+                <img src="~/images/kus.jpg" alt="Kuş">
+                <h2>Kuş</h2>
+            </a>
+        </section>
+        <section class="animal">
+            <a href="#hamster">
+                <img src="~/images/hamster.jpeg" alt="Hamster">
+                <h2>Hamster</h2>
+            </a>
+        </section>
+    </main>
+</body>
 </html>
 

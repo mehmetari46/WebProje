@@ -1,5 +1,43 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model WebProje.Models.ModelHayvanKabul
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hayvan Kabul Formu</title>
+    <link rel="stylesheet" href="~/css/animal.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="form-container">
+        <h1>Hayvan Kabul Formu</h1>
+        <form>
+            <div class="form-group">
+                <label for="name">Hayvan İsim:</label>
+                <input type="text" id="animal_name" name="name" required>
+                <span asp-validation-for="Animal_Name"></span>
+            </div>
+            <div class="form-group">
+                <label for="age">Hayvanın Yaşı:</label>
+                <input type="number" id="age" name="age"  required>
+                <span asp-validation-for="Animal_Age"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Cinsiyet:</label>
+                <input type="radio" name="cinsiyet" value="Erkek">Erkek
+                <input type="radio" name="cinsiyet" value="Dişi">Dişi
+                <span asp-validation-for="Animal_Gender"></span>
+            </div>
+            <div class="form-group">
+                <label for="kind">Şifre:</label>
+                <input type="radio" name="kind" value="kedi">Kedi
+                <input type="radio" name="kind" value="kopek">Köpek
+                <input type="radio" name="kind" value="kus">Kuş
+                <input type="radio" name="kind" value="hamster">Hamster
+                <span asp-validation-for="Animal_Kind"></span>
+            </div>
+            <button type="submit">Hayvan Kabul</button>
+        </form>
+    </div>
+</body>
+</html>

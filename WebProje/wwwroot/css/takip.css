@@ -1,0 +1,102 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-image: url('../images/barinak.jpg') !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.sorgulama {
+    margin-top: 2rem;
+    padding: 20px;
+    max-width: 400px;
+    border-radius: 10px;
+    text-align: center;
+    margin-left: 550px;
+    background-color: rgba(255, 255, 255, 0.9); /* Beyaz arka plan, biraz daha opak */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Hafif bir gölgelendirme */
+}
+
+    .sorgulama h2 {
+        margin-bottom: 0.5rem;
+        color: #007BFF;
+    }
+
+    .sorgulama form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sorgulama label {
+        font-weight: bold;
+        margin-right: 0.5rem;
+    }
+
+    .sorgulama input {
+        padding: 0.5rem;
+        margin-right: 1rem;
+        border: 1px solid #333;
+        border-radius: 4px;
+    }
+
+    .sorgulama button {
+        padding: 0.5rem 1rem;
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7); /* Şeffaf beyaz arka plan */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Hafif bir gölgelendirme */
+    border-radius: 10px;
+}
+
+    table th, table td {
+        padding: 12px;
+        border: 1px solid #333;
+    }
+
+    table th {
+        font-size: 12px; /* Başlık metni daha küçültme */
+        background-color: #007BFF;
+        color: #fff;
+    }
+
+    table tr:nth-child(even) {
+        background-color: rgba(0, 123, 255, 0.2); /* Sıradaki çift satırları belirginleştirme */
+    }
+
+#sonuc {
+    margin-top: 2rem;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-left: 200px;
+    background-color: rgba(255, 255, 255, 0.9); /* Beyaz arka plan, biraz daha opak */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Hafif bir gölgelendirme */
+}
+
+    #sonuc h2 {
+        margin-bottom: 1rem;
+        color: #007BFF;
+    }
+
+    #sonuc table {
+        margin-top: 1rem; /* Tabloya biraz boşluk */
+        width: 100%; /* Tabloyu arka planın içine sığdır */
+    }
+
+
+
+
+

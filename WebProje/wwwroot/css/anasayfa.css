@@ -1,0 +1,56 @@
+﻿body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    background-image: url('../images/barinak.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+header {
+    color: #fff;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.animal {
+    margin: 1rem;
+    text-align: center;
+    width: 200px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+    .animal:hover {
+        transform: translateY(-5px);
+    }
+
+    .animal img {
+        border-radius: 8px 8px 0 0;
+        width: 200px;
+        height: 150px;
+        object-fit: cover;
+    }
+
+    .animal h2 {
+        margin-top: 1rem;
+        font-size: 1.5rem;
+        color: #333;
+    }
+
+    .animal a {
+        text-decoration: none;
+        color: #007BFF;
+    }
+
+
