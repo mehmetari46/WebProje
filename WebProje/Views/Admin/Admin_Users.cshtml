@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hayvan Sahiplenme İstekleri</title>
+    <title>Admin Kullanıcıları</title>
     <link rel="stylesheet" href="/css/admin.css">
 </head>
 <body>
@@ -31,42 +31,56 @@
         </nav>
     </header>
     <div class="table-container">
-        <h2>Hayvan Sahiplenme İstekleri Tablosu</h2>
+        <h2>Kullanıcı Listesi</h2>
         <table>
             <thead>
                 <tr>
-                    <th>Kullanıcı Adı - Soyadı</th>
-                    <th>Email</th>
-                    <th>Telefon Numarası</th>
-                    <th>Hayvan ID</th>
-                    <th>Durum</th>
+                    <th>Kullanıcı ID</th>
+                    <th>Kullanıcı Adı</th>
+                    <th>İsim</th>
+                    <th>Soyisim</th>
+                    <th>E-mail</th>
+                    <th>Telefon</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Tablo içeriği burada dinamik olarak eklenecek -->
                 <tr>
-                    <td>Ahmet Yılmaz</td>
+                    <td>1001</td>
+                    <td>user123</td>
+                    <td>Ahmet</td>
+                    <td>Yılmaz</td>
                     <td>ahmet@example.com</td>
                     <td>555-123-4567</td>
-                    <td>12345</td>
-                    <td>
-                        <button class="btn-kabul">Kabul Et</button>
-                        <button class="btn-reddet">Reddet</button>
-                    </td>
                 </tr>
                 <tr>
-                    <td>Ali Demir</td>
-                    <td>ali@example.com</td>
+                    <td>1002</td>
+                    <td>johndoe</td>
+                    <td>John</td>
+                    <td>Doe</td>
+                    <td>john@example.com</td>
                     <td>555-987-6543</td>
-                    <td>67890</td>
-                    <td>
-                        <button class="btn-kabul">Kabul Et</button>
-                        <button class="btn-reddet">Reddet</button>
-                    </td>
                 </tr>
-                <!-- Örnek veriler -->
+                <!-- Yeni veri satırları -->
+                <tr>
+                    <td>1003</td>
+                    <td>marysmith</td>
+                    <td>Mary</td>
+                    <td>Smith</td>
+                    <td>mary@example.com</td>
+                    <td>555-111-2222</td>
+                </tr>
+                <tr>
+                    <td>1004</td>
+                    <td>janedoe</td>
+                    <td>Jane</td>
+                    <td>Doe</td>
+                    <td>jane@example.com</td>
+                    <td>555-333-4444</td>
+                </tr>
+                <!-- Yeni veri satırları -->
             </tbody>
         </table>
     </div>
 </body>
 </html>
+

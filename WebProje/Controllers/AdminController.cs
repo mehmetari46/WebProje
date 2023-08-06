@@ -8,5 +8,13 @@ namespace WebProje.Controllers
         {
             return View();
         }
+        public IActionResult Admin_Kabul()
+        {
+            return View();
+        }
+        public IActionResult Admin_Users()
+        {
+            return View();
+        }
     }
 }

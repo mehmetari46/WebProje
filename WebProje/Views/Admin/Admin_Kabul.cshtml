@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hayvan Sahiplenme İstekleri</title>
+    <title>Hayvan Kabul İstekleri</title>
     <link rel="stylesheet" href="/css/admin.css">
 </head>
 <body>
@@ -31,23 +31,24 @@
         </nav>
     </header>
     <div class="table-container">
-        <h2>Hayvan Sahiplenme İstekleri Tablosu</h2>
+        <h2>Hayvan Kabul İstekleri Tablosu</h2>
         <table>
             <thead>
                 <tr>
-                    <th>Kullanıcı Adı - Soyadı</th>
-                    <th>Email</th>
-                    <th>Telefon Numarası</th>
-                    <th>Hayvan ID</th>
+                    <th>Hayvan Adı</th>
+                    <th>Hayvan Yaşı</th>
+                    <th>Hayvan Türü</th>
+                    <th>Hayvan Cinsiyeti</th>
+                    <th>Kullanıcı ID</th>
                     <th>Durum</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Tablo içeriği burada dinamik olarak eklenecek -->
                 <tr>
-                    <td>Ahmet Yılmaz</td>
-                    <td>ahmet@example.com</td>
-                    <td>555-123-4567</td>
+                    <td>Max</td>
+                    <td>3</td>
+                    <td>Köpek</td>
+                    <td>Erkek</td>
                     <td>12345</td>
                     <td>
                         <button class="btn-kabul">Kabul Et</button>
@@ -55,18 +56,19 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Ali Demir</td>
-                    <td>ali@example.com</td>
-                    <td>555-987-6543</td>
+                    <td>Luna</td>
+                    <td>2</td>
+                    <td>Kedi</td>
+                    <td>Dişi</td>
                     <td>67890</td>
                     <td>
                         <button class="btn-kabul">Kabul Et</button>
                         <button class="btn-reddet">Reddet</button>
                     </td>
                 </tr>
-                <!-- Örnek veriler -->
             </tbody>
         </table>
     </div>
 </body>
 </html>
+
