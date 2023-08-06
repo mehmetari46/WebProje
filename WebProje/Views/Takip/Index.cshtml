@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@model IEnumerable<WebProje.Models.ModelHayvanKabul>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -30,20 +32,15 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach (var item in Model) {
                     <tr>
-                    <td>001</td>
-                    <td>max</td>
-                    <td>Köpek</td>
-                    <td>15</td>
-                    <td>beklemede</td>
+                    <td>@Html.DisplayFor(modelItem => item.SahiplenmeID)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Animal_Name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Animal_Kind)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Animal_Gender)</td>
+                    <td>@Html.DisplayFor(modelItem => item.SahiplenmeDurumu)</td>
                 </tr>
-                <tr>
-                    <td>002</td>
-                    <td>luna</td>
-                    <td>Kedi</td>
-                    <td>15</td>
-                    <td>kabul edildi</td>
-                </tr>
+                }
                 </tbody>
             </table>
         </section>

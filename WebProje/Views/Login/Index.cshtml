@@ -15,9 +15,9 @@
         <div class="login_register-box">
             <h2 class="login_register-text">Giriş</h2>
             <center>
-                <input placeholder="Kullanıcı Adı">
+                <input placeholder="Kullanıcı Adı" required>
                 <span asp-validation-for="User_Name"></span>
-                <input placeholder="Şifre">
+                <input placeholder="Şifre" required>
                 <span asp-validation-for="password"></span>
                 <br /><br />
                 <button type="submit" id="btn-login">Giriş Yap</button>
@@ -26,17 +26,17 @@
         <div class="login_register-box">
             <h2 class="login_register-text">Kayıt Ol</h2>
             <center>
-                <input placeholder="Kullanıcı Adı">
+                <input placeholder="Kullanıcı Adı" required>
                 <span asp-validation-for="User_Name"></span>
-                <input placeholder="E-Mail">
+                <input placeholder="E-Mail" required>
                 <span asp-validation-for="E_Mail"></span>
-                <input placeholder="Telefon No">
+                <input placeholder="Telefon No" required>
                 <span asp-validation-for="Phone"></span>
-                <input placeholder="İsim">
+                <input placeholder="İsim" required>
                 <span asp-validation-for="First_Name"></span>
-                <input placeholder="Soyisim">
+                <input placeholder="Soyisim" required>
                 <span asp-validation-for="Last_Name"></span>
-                <input placeholder="Şifre">
+                <input placeholder="Şifre" required>
                 <span asp-validation-for="password"></span>
                 <br /><br />
                 <button type="submit" id="btn-register">Kayıt Ol</button>

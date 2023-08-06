@@ -1,11 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WebProje.Models;
 
 namespace WebProje.Controllers
 {
     public class AdminController : Controller
     {
+        private readonly dbContext _dbContext;
+
+
+        public AdminController(dbContext context)
+        {
+            _dbContext = context;
+
+        }
         public IActionResult Index()
         {
+            ViewData["Login"] = _dbContext.Login.ToList();
             return View();
         }
         public IActionResult Admin_Kabul()
@@ -14,7 +24,9 @@ namespace WebProje.Controllers
         }
         public IActionResult Admin_Users()
         {
-            return View();
+            List<Login> users = _dbContext.Login.ToList();
+            return View(users);
         }
+
     }
 }

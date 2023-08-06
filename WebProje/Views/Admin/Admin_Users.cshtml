@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model IEnumerable<WebProje.Models.Login>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -44,40 +45,16 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach (var item in Model) {
                 <tr>
-                    <td>1001</td>
-                    <td>user123</td>
-                    <td>Ahmet</td>
-                    <td>Yılmaz</td>
-                    <td>ahmet@example.com</td>
-                    <td>555-123-4567</td>
+                    <td>@Html.DisplayFor(modelItem => item.User_ID)</td>
+                    <td>@Html.DisplayFor(modelItem => item.User_Name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.First_Name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Last_Name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.E_Mail)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Phone)</td>
                 </tr>
-                <tr>
-                    <td>1002</td>
-                    <td>johndoe</td>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>john@example.com</td>
-                    <td>555-987-6543</td>
-                </tr>
-                <!-- Yeni veri satırları -->
-                <tr>
-                    <td>1003</td>
-                    <td>marysmith</td>
-                    <td>Mary</td>
-                    <td>Smith</td>
-                    <td>mary@example.com</td>
-                    <td>555-111-2222</td>
-                </tr>
-                <tr>
-                    <td>1004</td>
-                    <td>janedoe</td>
-                    <td>Jane</td>
-                    <td>Doe</td>
-                    <td>jane@example.com</td>
-                    <td>555-333-4444</td>
-                </tr>
-                <!-- Yeni veri satırları -->
+                }
             </tbody>
         </table>
     </div>
