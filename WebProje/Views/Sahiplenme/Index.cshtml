@@ -10,37 +10,43 @@
 <body>
     <div class="form-container">
         <h1>Hayvan Sahiplenme Formu</h1>
-        <form>
+        <form asp-controller="Sahiplenme" asp-action="Index" method="post">
             <div class="form-group">
-                <label for="name">İsim-Soyisim:</label>
-                <input type="text" id="name" name="name" required>
+                <label asp-for="IsimSoyisim">İsim-Soyisim:</label>
+                <input asp-for="IsimSoyisim" type="text" id="IsimSoyisim" name="IsimSoyisim" required>
                 <span asp-validation-for="IsimSoyisim"></span>
             </div>
             <div class="form-group">
-                <label for="email">E-posta:</label>
-                <input type="email" id="email" name="email" required>
+                <label asp-for="Email">E-posta:</label>
+                <input asp-for="Email" type="email" id="Email" name="Email" required>
                 <span asp-validation-for="Email"></span>
             </div>
             <div class="form-group">
-                <label for="phone">Telefon Numarası:</label>
-                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                <label asp-for="TelNo">Telefon Numarası:</label>
+                <input asp-for="TelNo" type="text" id="TelNo" name="TelNo" required>
                 <span asp-validation-for="TelNo"></span>
             </div>
             <div class="form-group">
-                <label for="animal_id">Hayvan ID:</label>
-                <input type="text" id="animal_id" name="animal_id" required>
+                <label asp-for="HayvanID">Hayvan ID:</label>
+                <input asp-for="HayvanID" type="text" id="HayvanID" name="HayvanID" required>
                 <span asp-validation-for="HayvanID"></span>
             </div>
             <div class="form-group">
-                <label for="address">Adres:</label>
-                <input type="text" id="address" name="address" required>
+                <label asp-for="Adres">Adres:</label>
+                <input asp-for="Adres" type="text" id="Adres" name="Adres" required>
                 <span asp-validation-for="Adres"></span>
             </div>
             <div class="form-group">
-                <label for="password">Şifre:</label>
-                <input type="password" id="password" name="password" required>
+                <label asp-for="Sifre">Şifre:</label>
+                <input asp-for="Sifre" type="password" id="Sifre" name="Sifre" required>
                 <span asp-validation-for="Sifre"></span>
             </div>
+            <br /><br />
+            @if (!string.IsNullOrEmpty(ViewBag.SuccessMessage))
+            {
+                    <p class="success-message">@ViewBag.SuccessMessage</p>
+            }
+            <br />
             <button type="submit">Sahiplen</button>
         </form>
     </div>

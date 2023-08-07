@@ -1,0 +1,61 @@
+﻿@model WebProje.Models.ModelHayvanKabul
+
+@{
+    ViewData["Title"] = "EditAnimal";
+}
+<style>
+    .row, h1, h4 {
+        margin-left: 300px;
+    }
+</style>
+<h1>Edit Animal</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditAnimal">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="HayvanID" />
+            <div class="form-group">
+                <label asp-for="User_ID" class="control-label"></label>
+                <input asp-for="User_ID" class="form-control" />
+                <span asp-validation-for="User_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Animal_Name" class="control-label"></label>
+                <input asp-for="Animal_Name" class="form-control" />
+                <span asp-validation-for="Animal_Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Animal_Age" class="control-label"></label>
+                <input asp-for="Animal_Age" class="form-control" />
+                <span asp-validation-for="Animal_Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Animal_Gender" class="control-label"></label>
+                <input asp-for="Animal_Gender" class="form-control" />
+                <span asp-validation-for="Animal_Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Animal_Kind" class="control-label"></label>
+                <input asp-for="Animal_Kind" class="form-control" />
+                <span asp-validation-for="Animal_Kind" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HayvanDurum" class="control-label"></label>
+                <input asp-for="HayvanDurum" class="form-control" />
+                <span asp-validation-for="HayvanDurum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -16,5 +16,55 @@ html {
 body {
     margin-bottom: 60px;
 }
+.error-message {
+    background-color: #f8d7da; /* Bootstrap alert danger arka plan rengi */
+    border-color: #f5c6cb; /* Bootstrap alert danger border rengi */
+    color: #721c24; /* Bootstrap alert danger metin rengi */
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+}
+.success-message {
+    background-color: lightgreen; 
+    border-color: #f5c6cb; 
+    color: white; 
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 300px;
+    margin: 0 auto;
+}
+
+    .form input,
+    .form input {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+
+    .form button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
 
 

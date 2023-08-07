@@ -1,4 +1,7 @@
-﻿@model WebProje.Models.Login
+﻿@{
+    Layout = "";
+}
+@model WebProje.Models.Login
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,33 +17,43 @@
     <div class="form-container">
         <div class="login_register-box">
             <h2 class="login_register-text">Giriş</h2>
-            <center>
-                <input placeholder="Kullanıcı Adı" required>
-                <span asp-validation-for="User_Name"></span>
-                <input placeholder="Şifre" required>
+            <form class="form" asp-action="Index" method="post">
+                <input type="email" name="email" id="email" placeholder="E-Mail" required>
+                <span asp-validation-for="E_Mail"></span>
+                <input type="password" name="key" id="key" placeholder="Şifre" required>
                 <span asp-validation-for="password"></span>
-                <br /><br />
+                <br />
+                @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+                {
+                    <p class="error-message">@ViewBag.ErrorMessage</p>
+                }
+                <br />
                 <button type="submit" id="btn-login">Giriş Yap</button>
-            </center>
+            </form>
         </div>
         <div class="login_register-box">
             <h2 class="login_register-text">Kayıt Ol</h2>
-            <center>
-                <input placeholder="Kullanıcı Adı" required>
+            <form asp-action="Register" class="form" method="post">
+                <input asp-for="User_Name" type="text" name="User_Name" id="userName" placeholder="Kullanıcı Adı">
                 <span asp-validation-for="User_Name"></span>
-                <input placeholder="E-Mail" required>
+                <input asp-for="E_Mail" type="email" name="E_Mail" id="email" placeholder="E-Mail">
                 <span asp-validation-for="E_Mail"></span>
-                <input placeholder="Telefon No" required>
+                <input asp-for="Phone" type="number" name="Phone" id="phone" placeholder="Telefon No">
                 <span asp-validation-for="Phone"></span>
-                <input placeholder="İsim" required>
+                <input asp-for="First_Name" type="text" name="First_Name" id="firstname" placeholder="İsim">
                 <span asp-validation-for="First_Name"></span>
-                <input placeholder="Soyisim" required>
+                <input asp-for="Last_Name" type="text" name="Last_Name" id="lastname" placeholder="Soyisim">
                 <span asp-validation-for="Last_Name"></span>
-                <input placeholder="Şifre" required>
+                <input asp-for="password" type="password" name="password" id="key" placeholder="Şifre">
                 <span asp-validation-for="password"></span>
-                <br /><br />
-                <button type="submit" id="btn-register">Kayıt Ol</button>
-            </center>
+                <br />
+                @if (!string.IsNullOrEmpty(ViewBag.SuccessMessage))
+                {
+                    <p class="success-message">@ViewBag.SuccessMessage</p>
+                }
+                <br />
+                <button type="submit" >Kayıt Ol</button>
+            </form>
         </div>
     </div>
     </body>

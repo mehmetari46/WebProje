@@ -16,24 +16,26 @@ namespace WebProje.Migrations
                 columns: table => new
                 {
                     User_ID = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     User_Name = table.Column<string>(type: "text", nullable: false),
-                    password = table.Column<int>(type: "integer", nullable: false),
+                    password = table.Column<string>(type: "text", nullable: false),
                     E_Mail = table.Column<string>(type: "text", nullable: false),
                     First_Name = table.Column<string>(type: "text", nullable: false),
                     Last_Name = table.Column<string>(type: "text", nullable: false),
-                    Phone = table.Column<int>(type: "integer", nullable: false)
+                    Phone = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
+                    table.PrimaryKey("PK_Login", x => x.User_ID);
                 });
 
             migrationBuilder.CreateTable(
-                name: "ModelHayvanKabul",
+                name: "modelHayvanKabul",
                 columns: table => new
                 {
                     HayvanID = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                    User_ID = table.Column<int>(type: "integer", nullable: false),
                     Animal_Name = table.Column<string>(type: "text", nullable: false),
                     Animal_Age = table.Column<int>(type: "integer", nullable: false),
                     Animal_Gender = table.Column<string>(type: "text", nullable: false),
@@ -41,6 +43,7 @@ namespace WebProje.Migrations
                 },
                 constraints: table =>
                 {
+                    table.PrimaryKey("PK_modelHayvanKabul", x => x.HayvanID);
                 });
 
             migrationBuilder.CreateTable(
@@ -48,17 +51,19 @@ namespace WebProje.Migrations
                 columns: table => new
                 {
                     SahiplenmeID = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     HayvanID = table.Column<int>(type: "integer", nullable: false),
                     Email = table.Column<string>(type: "text", nullable: false),
                     IsimSoyisim = table.Column<string>(type: "text", nullable: false),
-                    TelNo = table.Column<int>(type: "integer", nullable: false),
+                    TelNo = table.Column<string>(type: "text", nullable: false),
                     Adres = table.Column<string>(type: "text", nullable: false),
                     Sifre = table.Column<int>(type: "integer", nullable: false),
-                    SahiplenmeDurumu = table.Column<string>(type: "text", nullable: false)
+                    SahiplenmeDurumu = table.Column<string>(type: "text", nullable: false),
+                    User_ID = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
+                    table.PrimaryKey("PK_ModelSahiplen", x => x.SahiplenmeID);
                 });
         }
 
@@ -69,7 +74,7 @@ namespace WebProje.Migrations
                 name: "Login");
 
             migrationBuilder.DropTable(
-                name: "ModelHayvanKabul");
+                name: "modelHayvanKabul");
 
             migrationBuilder.DropTable(
                 name: "ModelSahiplen");

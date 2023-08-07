@@ -10,37 +10,30 @@
 </head>
 <body>
     <main>
-        <section class="sorgulama">
-            <h2>Sahiplenme Numarası Sorgulama</h2>
-            <form>
-                <label for="sahiplenmeNo">Sahiplenme Numarası:</label>
-                <input type="text" id="sahiplenmeNo" name="sahiplenmeNo" required>
-                <button type="submit">Sorgula</button>
-            </form>
-        </section>
-
         <section id="sonuc">
             <table>
-                <h2>Sorgulama Sonuçları</h2>
+                <h2>Başvuru Takip</h2>
                 <thead>
                     <tr>
                         <th>Sahiplenme Numarası</th>
                         <th>Hayvan Adı</th>
                         <th>Hayvan Türü</th>
+                        <th>Yaş</th>
+                        <th>cinsiyet</th>
                         <th>Hayvan ID</th>
                         <th>Sahiplenme Durumu</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var item in Model) {
+                    
                     <tr>
-                    <td>@Html.DisplayFor(modelItem => item.SahiplenmeID)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Animal_Name)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Animal_Kind)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Animal_Gender)</td>
-                    <td>@Html.DisplayFor(modelItem => item.SahiplenmeDurumu)</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
-                }
+                
                 </tbody>
             </table>
         </section>

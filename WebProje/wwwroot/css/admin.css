@@ -1,6 +1,6 @@
 ﻿body {
     font-family: 'Arial', sans-serif;
-    margin: 0;
+    margin:auto;
     padding: 50px;
     background-color: #f7f7f7;
     background-image: url('../images/barinak2.jpeg');
@@ -10,8 +10,8 @@
 }
 
 .table-container {
-    max-width: 800px;
-    margin: 0 auto;
+    margin-left: 200px;
+    max-width: 1000px;
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
@@ -63,4 +63,12 @@ tbody tr:nth-child(even) {
 
     .btn-kabul:hover, .btn-reddet:hover {
         opacity: 0.9;
+    }
+.update-btn {
+    padding: 6px 10px;
+    border-radius: 4px;
+}
+
+    .update-btn .bi {
+        margin-right: 4px;
     }

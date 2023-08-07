@@ -30,7 +30,16 @@ label {
     font-weight: bold;
     margin-bottom: 5px;
 }
-
+.success-message {
+    background-color: lightgreen;
+    border-color: #f5c6cb;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+}
 
 
 button {

@@ -8,19 +8,19 @@ namespace WebProje.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int User_ID { get; set; }
-        [Required(ErrorMessage = "User name is required")]
+        [Required(ErrorMessage = "Kullanıcı adı kısmı boş bırakılamaz")]
         public string User_Name { get; set; }
-        [Required(ErrorMessage = "Password is required")]
-        public int password { get; set; }
-        [Required(ErrorMessage = "E-Mail  is required")]
-        [EmailAddress(ErrorMessage = "Invalid email address")]
+        [Required(ErrorMessage = "Şifre kısmı boş bırakılamaz")]
+        public string password { get; set; }
+        [Required(ErrorMessage = "E-mail kısmı boş bırakılamaz")]
+        [EmailAddress(ErrorMessage = "Lütfen geçerli bir e-mail adresi giriniz")]
         public string E_Mail { get; set; }
-        [Required(ErrorMessage = "First name is required")]
+        [Required(ErrorMessage = "isim kısmı boş bırakılamaz")]
         public string First_Name { get; set; }
-        [Required(ErrorMessage = "Last name is required")]
+        [Required(ErrorMessage = "Soyisim kısmı boş bırakılamaz")]
         public string Last_Name { get; set; }
-        [Required(ErrorMessage = "Phone number is required")]
-        public int Phone { get; set; }
+        [Required(ErrorMessage = "Telefon numarası kısmı boş bırakılamaz")]
+        public string Phone { get; set; }
 
 }
 }

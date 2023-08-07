@@ -10,33 +10,36 @@
 <body>
     <div class="form-container">
         <h1>Hayvan Kabul Formu</h1>
-        <form>
-            <div class="form-group">
-                <label for="name">Hayvan İsim:</label>
-                <input type="text" id="animal_name" name="name" required>
-                <span asp-validation-for="Animal_Name"></span>
-            </div>
-            <div class="form-group">
-                <label for="age">Hayvanın Yaşı:</label>
-                <input type="number" id="age" name="age"  required>
-                <span asp-validation-for="Animal_Age"></span>
-            </div>
-
-            <div class="form-group">
-                <label for="gender">Cinsiyet:</label>
-                <input type="radio" name="cinsiyet" value="Erkek">Erkek
-                <input type="radio" name="cinsiyet" value="Dişi">Dişi
-                <span asp-validation-for="Animal_Gender"></span>
-            </div>
-            <div class="form-group">
-                <label for="kind">Tür:</label>
-                <input type="radio" name="kind" value="kedi">Kedi
-                <input type="radio" name="kind" value="kopek">Köpek
-                <input type="radio" name="kind" value="kus">Kuş
-                <input type="radio" name="kind" value="hamster">Hamster
-                <span asp-validation-for="Animal_Kind"></span>
-            </div>
-            <button type="submit">Hayvan Kabul</button>
+        <form asp-controller="Kabul" asp-action="Index" class="form-group" method="post">
+            <label asp-for="User_ID">Kullanıcı ID:</label>
+            <input asp-for="User_ID" type="number" name="User_ID" id="User_ID" required>
+            <span asp-validation-for="User_ID"></span>
+            <label asp-for="Animal_Name">Hayvan İsim:</label>
+            <input asp-for="Animal_Name" type="text" name="Animal_Name" id="Animal_Name" required>
+            <span asp-validation-for="Animal_Name"></span>
+            <label asp-for="Animal_Age">Hayvanın Yaşı:</label>
+            <input asp-for="Animal_Age" type="number" name="Animal_Age" id="Animal_Age" required>
+            <span asp-validation-for="Animal_Age"></span>
+            <label asp-for="Animal_Gender">Cinsiyet:</label>           
+            <input asp-for="Animal_Gender" type="radio" name="Animal_Gender" value="Erkek" id="Animal_Gender">Erkek
+            <input asp-for="Animal_Gender" type="radio" name="Animal_Gender" value="Dişi" id=" Animal_Gender">Dişi
+            <span asp-validation-for="Animal_Gender"></span>
+            <label asp-for="Animal_Kind">Tür:</label>
+            <input asp-for="Animal_Kind" type="radio" name="Animal_Kind" value="Kedi" id="Animal_Kind">Kedi
+            <input asp-for="Animal_Kind" type="radio" name="Animal_Kind" value="Köpek" id="Animal_Kind">Köpek
+            <input asp-for="Animal_Kind" type="radio" name="Animal_Kind" value="Kuş" id="Animal_Kind">Kuş
+            <input asp-for="Animal_Kind" type="radio" name="Animal_Kind" value="Hamster" id="Animal_Kind">Hamster
+            <span asp-validation-for="Animal_Kind"></span>
+            <label asp-for="HayvanDurum">Hayvan Durumu:</label>
+            <input asp-for="HayvanDurum" type="text" name="HayvanDurum" id="HayvanDurum" required>
+            <span asp-validation-for="HayvanDurum"></span>
+            <br /><br />
+            @if (!string.IsNullOrEmpty(ViewBag.SuccessMessage))
+            {
+                <p class="success-message">@ViewBag.SuccessMessage</p>
+            }
+            <br />
+            <button type="submit">Hayvan Bırak</button>
         </form>
     </div>
 </body>

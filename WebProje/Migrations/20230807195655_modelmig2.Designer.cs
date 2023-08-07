@@ -11,8 +11,8 @@ using WebProje.Models;
 namespace WebProje.Migrations
 {
     [DbContext(typeof(dbContext))]
-    [Migration("20230806220356_model_mig")]
-    partial class model_mig
+    [Migration("20230807195655_modelmig2")]
+    partial class modelmig2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -22,10 +22,16 @@ namespace WebProje.Migrations
                 .HasAnnotation("ProductVersion", "7.0.9")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
-            NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
+            NpgsqlModelBuilderExtensions.UseSerialColumns(modelBuilder);
 
             modelBuilder.Entity("WebProje.Models.Login", b =>
                 {
+                    b.Property<int>("User_ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseSerialColumn(b.Property<int>("User_ID"));
+
                     b.Property<string>("E_Mail")
                         .IsRequired()
                         .HasColumnType("text");
@@ -38,27 +44,31 @@ namespace WebProje.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("Phone")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("User_ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("User_ID"));
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<string>("User_Name")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("password")
-                        .HasColumnType("integer");
+                    b.Property<string>("password")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("User_ID");
 
                     b.ToTable("Login");
                 });
 
             modelBuilder.Entity("WebProje.Models.ModelHayvanKabul", b =>
                 {
+                    b.Property<int>("HayvanID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseSerialColumn(b.Property<int>("HayvanID"));
+
                     b.Property<int>("Animal_Age")
                         .HasColumnType("integer");
 
@@ -74,17 +84,25 @@ namespace WebProje.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("HayvanID")
-                        .ValueGeneratedOnAdd()
+                    b.Property<int>("HayvanDurum")
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("HayvanID"));
+                    b.Property<int>("User_ID")
+                        .HasColumnType("integer");
 
-                    b.ToTable("ModelHayvanKabul");
+                    b.HasKey("HayvanID");
+
+                    b.ToTable("modelHayvanKabul");
                 });
 
             modelBuilder.Entity("WebProje.Models.ModelSahiplen", b =>
                 {
+                    b.Property<int>("SahiplenmeID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseSerialColumn(b.Property<int>("SahiplenmeID"));
+
                     b.Property<string>("Adres")
                         .IsRequired()
                         .HasColumnType("text");
@@ -100,21 +118,15 @@ namespace WebProje.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("SahiplenmeDurumu")
+                    b.Property<string>("Sifre")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("SahiplenmeID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
+                    b.Property<string>("TelNo")
+                        .IsRequired()
+                        .HasColumnType("text");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("SahiplenmeID"));
-
-                    b.Property<int>("Sifre")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("TelNo")
-                        .HasColumnType("integer");
+                    b.HasKey("SahiplenmeID");
 
                     b.ToTable("ModelSahiplen");
                 });

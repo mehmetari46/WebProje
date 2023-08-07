@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Kullanıcıları</title>
     <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 </head>
 <body>
     <header>
@@ -16,15 +17,19 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="fa-solid fa-cat sidebarField" asp-area="" asp-controller="Admin" asp-action="Index"><span>Sahiplenme Istek</span></a>
+                            <a class="fa-solid fa-tent sidebarField" asp-area="" asp-controller="Admin" asp-action="Index"><span>Sahiplenme Istek</span></a>
                         </li>
                         <br />
                         <li class="nav-item">
-                            <a class="fa-solid fa-dog sidebarField" asp-area="" asp-controller="Admin" asp-action="Admin_Kabul"><span>Kabul Istekleri</span></a>
+                            <a class="fa-solid fa-people-roof sidebarField" asp-area="" asp-controller="Admin" asp-action="Admin_Kabul"><span>Kabul Istekleri</span></a>
                         </li>
                         <br />
                         <li class="nav-item">
-                            <a class="fa-solid fa-cat sidebarField" asp-area="" asp-controller="Admin" asp-action="Admin_Users"><span>Kullanicilar</span></a>
+                            <a class="fa-solid fa-person-shelter sidebarField" asp-area="" asp-controller="Admin" asp-action="Admin_Users"><span>Kullanicilar</span></a>
+                        </li>
+                        <br />
+                        <li class="nav-item">
+                            <a class="fa-solid fa-dog sidebarField" asp-area="" asp-controller="Admin" asp-action="Animals"><span>Hayvanlar</span></a>
                         </li>
                     </ul>
                 </div>
@@ -42,6 +47,7 @@
                     <th>Soyisim</th>
                     <th>E-mail</th>
                     <th>Telefon</th>
+                    <th>Durum</th>
                 </tr>
             </thead>
             <tbody>
@@ -53,6 +59,9 @@
                     <td>@Html.DisplayFor(modelItem => item.Last_Name)</td>
                     <td>@Html.DisplayFor(modelItem => item.E_Mail)</td>
                     <td>@Html.DisplayFor(modelItem => item.Phone)</td>
+                    <td>
+                        <a href="/Admin/Delete/@item.User_ID"><button type="submit" class="btn btn-danger"><span>Sil</span></button></a>
+                    </td>
                 </tr>
                 }
             </tbody>

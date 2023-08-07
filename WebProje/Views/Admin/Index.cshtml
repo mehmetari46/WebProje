@@ -1,10 +1,12 @@
-﻿<!DOCTYPE html>
+﻿@model IEnumerable<WebProje.Models.ModelSahiplen>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hayvan Sahiplenme İstekleri</title>
     <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 </head>
 <body>
     <header>
@@ -15,15 +17,19 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="fa-solid fa-cat sidebarField" asp-area="" asp-controller="Admin" asp-action="Index"><span>Sahiplenme Istek</span></a>
+                            <a class="fa-solid fa-tent sidebarField" asp-area="" asp-controller="Admin" asp-action="Index"><span>Sahiplenme Istek</span></a>
                         </li>
                         <br />
                         <li class="nav-item">
-                            <a class="fa-solid fa-dog sidebarField" asp-area="" asp-controller="Admin" asp-action="Admin_Kabul"><span>Kabul Istekleri</span></a>
+                            <a class="fa-solid fa-people-roof sidebarField" asp-area="" asp-controller="Admin" asp-action="Admin_Kabul"><span>Kabul Istekleri</span></a>
                         </li>
                         <br />
                         <li class="nav-item">
-                            <a class="fa-solid fa-cat sidebarField" asp-area="" asp-controller="Admin" asp-action="Admin_Users"><span>Kullanicilar</span></a>
+                            <a class="fa-solid fa-person-shelter sidebarField" asp-area="" asp-controller="Admin" asp-action="Admin_Users"><span>Kullanicilar</span></a>
+                        </li>
+                        <br />
+                        <li class="nav-item">
+                            <a class="fa-solid fa-dog sidebarField" asp-area="" asp-controller="Admin" asp-action="Animals"><span>Hayvanlar</span></a>
                         </li>
                     </ul>
                 </div>
@@ -39,34 +45,27 @@
                     <th>Email</th>
                     <th>Telefon Numarası</th>
                     <th>Hayvan ID</th>
+                    <th>Adres</th>
                     <th>Durum</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Tablo içeriği burada dinamik olarak eklenecek -->
+                @foreach (var item in Model) {
                 <tr>
-                    <td>Ahmet Yılmaz</td>
-                    <td>ahmet@example.com</td>
-                    <td>555-123-4567</td>
-                    <td>12345</td>
+                    <td>@Html.DisplayFor(modelItem => item.IsimSoyisim)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                    <td>@Html.DisplayFor(modelItem => item.TelNo)</td>
+                    <td>@Html.DisplayFor(modelItem => item.HayvanID)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Adres)</td>
                     <td>
                         <button class="btn-kabul">Kabul Et</button>
                         <button class="btn-reddet">Reddet</button>
                     </td>
                 </tr>
-                <tr>
-                    <td>Ali Demir</td>
-                    <td>ali@example.com</td>
-                    <td>555-987-6543</td>
-                    <td>67890</td>
-                    <td>
-                        <button class="btn-kabul">Kabul Et</button>
-                        <button class="btn-reddet">Reddet</button>
-                    </td>
-                </tr>
-                <!-- Örnek veriler -->
+                }
             </tbody>
         </table>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
