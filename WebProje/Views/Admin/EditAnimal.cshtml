@@ -1,15 +1,43 @@
 ﻿@model WebProje.Models.ModelHayvanKabul
-
 @{
-    ViewData["Title"] = "EditAnimal";
+    Layout = "";
 }
 <style>
     .row, h1, h4 {
         margin-left: 300px;
     }
 </style>
+
+<header>
+        <nav class="sidebar">
+            <div>
+                <h2 style="color:cornflowerblue; text-align:center;">HAYVAN BARINAĞI</h2>
+                <br /><br />
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="fa-solid fa-tent sidebarField" asp-area="" asp-controller="Admin" asp-action="Index"><span>Sahiplenme Istek</span></a>
+                        </li>
+                        <br />
+                        <li class="nav-item">
+                            <a class="fa-solid fa-people-roof sidebarField" asp-area="" asp-controller="Admin" asp-action="Admin_Kabul"><span>Kabul Istekleri</span></a>
+                        </li>
+                        <br />
+                        <li class="nav-item">
+                            <a class="fa-solid fa-person-shelter sidebarField" asp-area="" asp-controller="Admin" asp-action="Admin_Users"><span>Kullanicilar</span></a>
+                        </li>
+                        <br />
+                        <li class="nav-item">
+                            <a class="fa-solid fa-dog sidebarField" asp-area="" asp-controller="Admin" asp-action="Animals"><span>Hayvanlar</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 <h1>Edit Animal</h1>
 <hr />
+
 <div class="row">
     <div class="col-md-4">
         <form asp-action="EditAnimal">
@@ -48,13 +76,13 @@
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
+            <div>
+                <a asp-action="Animals">Back to List</a>
+            </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

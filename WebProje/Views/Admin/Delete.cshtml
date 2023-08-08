@@ -1,14 +1,39 @@
 ﻿@model WebProje.Models.Login
-
 @{
-    ViewData["Title"] = "Delete";
+    Layout = "";
 }
 <style>
     .delcss,h3,h1,h4{
         margin-left:300px;
     }
 </style>
-
+<header>
+    <nav class="sidebar">
+        <div>
+            <h2 style="color:cornflowerblue; text-align:center;">HAYVAN BARINAĞI</h2>
+            <br /><br />
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="fa-solid fa-tent sidebarField" asp-area="" asp-controller="Admin" asp-action="Index"><span>Sahiplenme Istek</span></a>
+                    </li>
+                    <br />
+                    <li class="nav-item">
+                        <a class="fa-solid fa-people-roof sidebarField" asp-area="" asp-controller="Admin" asp-action="Admin_Kabul"><span>Kabul Istekleri</span></a>
+                    </li>
+                    <br />
+                    <li class="nav-item">
+                        <a class="fa-solid fa-person-shelter sidebarField" asp-area="" asp-controller="Admin" asp-action="Admin_Users"><span>Kullanicilar</span></a>
+                    </li>
+                    <br />
+                    <li class="nav-item">
+                        <a class="fa-solid fa-dog sidebarField" asp-area="" asp-controller="Admin" asp-action="Animals"><span>Hayvanlar</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
 <h1>Delete</h1>
 
 <h3>Are you sure you want to delete this?</h3>

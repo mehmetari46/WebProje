@@ -38,7 +38,7 @@ namespace WebProje.Controllers
                 }
                 else
                 {
-                    ViewBag.ErrorMessage = "HATALI E-MAİL VEYA SİFRE"; // Hata mesajını ayarla
+                    ViewBag.ErrorMessage = "HATALI E-MAİL VEYA SİFRE"; // Hata mesajı
                 }
             }
             return View();
